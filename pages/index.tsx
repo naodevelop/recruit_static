@@ -1,7 +1,5 @@
 import { client } from "../libs/client";
-import styles from '../styles/Home.module.scss';
 import Link from "next/link";
-
 
 //SSG
 export const getStaticProps = async() => {
@@ -13,13 +11,22 @@ export const getStaticProps = async() => {
     },
   };
 
+ 
+
 };
 
 
-export default function Home({works}) {
+
+export default function Home({works}: any) {
+  interface Works {
+    title: string,
+    id: number
+  }
   return (
-    <div>
-      {works.map((works) => (
+    <>
+    
+  {works.map((works: Works) => (
+
         <li key={works.id}>
           <Link href={`works/${works.id}`}>
             {works.title}
@@ -27,7 +34,6 @@ export default function Home({works}) {
         
         </li>
       ))}
-      <p>あああ</p>
-    </div>
-  );
+    </>
+  )
 }
