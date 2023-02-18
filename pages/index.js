@@ -27,6 +27,7 @@ export default function Home({works}) {
         
         </li>
       ))}
+      <p>あああ</p>
     </div>
   );
 }
